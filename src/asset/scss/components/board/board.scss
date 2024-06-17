@@ -1,0 +1,227 @@
+
+
+//스위치문 선택메뉴
+
+.menu_top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switchMenu {
+  border-radius: 30px;
+  text-align: center;
+  padding: 7px;
+  border: 2px solid $primary;
+  color: $primary;
+  text-align-last: center;
+  font-size: 18px;
+  font-weight: 600;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+
+  option {
+    text-align-last: center;
+    text-align: center;
+    color: #555;
+    padding: 7px;
+  }
+}
+
+//사용자 게시판
+
+div.boardContents {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 15px 0;
+  border-top: 2px solid #222;
+}
+
+li.boardContents {
+  width: 100%;
+  border-bottom: 1px #ddd solid;
+  padding: 14px 7px;
+  box-sizing: border-box;
+  Link {
+    padding-right: 50%;
+  }
+}
+li.boardContents:last-of-type {
+  border: none;
+}
+
+//게시물 작성(CreateBoard & BoardUpdate)
+
+.createBox {
+  width: 100%;
+  max-width: 910px;
+  margin: 80px auto 100px;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+  @include mobile {
+    margin: 60px auto 80px;
+  }
+}
+
+.createspan {
+  display: block;
+  margin-bottom: 5px;
+  color: $sub;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.createByInput,
+.createTitleInput {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 7px;
+  border: 1px solid $sub;
+  box-sizing: border-box;
+}
+
+.creatInputContents {
+  width: 100%;
+  border-radius: 7px;
+  padding: 7px 10px;
+  border: 1px solid $sub;
+  box-sizing: border-box;
+}
+
+.createBtn {
+  position: absolute;
+  right: 0px;
+}
+
+//게시글(BoardDetailson)
+
+.detailBox {
+  //max-width: 940px; BoardDetail.jsx 에서 contWrap으로 감쌈
+  // width: 80%; 클래스 명을 까먹어서  임시
+  //margin: 0 auto;
+  position: relative;
+  //min-width: 650px;
+
+  .contentTextBox {
+    //margin: 25px;
+    .textBox,
+    .parts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      margin: 60px 0px;
+      h1 {
+        font-weight: bold;
+      }
+    }
+    .textImg {
+      width: 100%;
+      //padding: 15px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.detailcontents {
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 210px;
+  line-height: 25px;
+  font-size: 15px;
+  color: #555;
+  @include mobile {
+    margin-bottom: 60px;
+  }
+  h5 {
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  p {
+    font-size: 15px;
+    line-height: 25px;
+    color: #555;
+  }
+}
+
+.detailBtn {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 60px;
+  border-top: 1px solid #555;
+  > div {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+  }
+}
+
+.detailTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px 0;
+  h2 {
+    flex:1;
+    line-height: 38px;
+    font-weight: 600;
+  }
+}
+
+.detailCreate {
+  margin: 20px 0;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  //border-bottom: 2px #ebecf0 solid;
+  border-bottom: 1px solid #555;
+  color: $sub;
+  span {
+    display: block;
+    font-size: 13px;
+  }
+  h3 {
+    font-size: 13px;
+  }
+}
+
+
+.infoBtn {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  bottom: 50px;
+}
+
+hr {
+  margin: 0;
+  border: 1px solid #555;
+}
+
+// progress bar 커스텀
+
+.charLimit {
+  margin-bottom: 30px;
+  span.label {
+    font-size: 13px;
+    color: $sub;
+    display: block;
+    text-align: right;
+    margin-bottom: 6px;
+  }
+  .MuiLinearProgress-bar {
+    background-color: #fd7b54 !important;
+  }
+  .css-eglki6-MuiLinearProgress-root {
+    background-color: #ddd;
+    height: 5px;
+    border-radius: 30px;
+  }
+}

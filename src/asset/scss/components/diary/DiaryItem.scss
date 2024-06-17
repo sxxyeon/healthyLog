@@ -1,0 +1,75 @@
+.DiaryItem {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px 3px rgb(0, 0, 0, 10%);
+  border-radius: 15px;
+
+  // 이모션 부분
+  .img_section {
+    min-width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  //이모션 부분 색깔 구분
+  .img_section_1 {
+    background-color: #fd7b54;
+  }
+
+  .img_section_2 {
+    background-color: #ffb59f;
+  }
+
+  .img_section_3 {
+    background-color: #545454;
+  }
+
+  // 날짜 및 텍스트 부분
+  .info_section {
+    flex-grow: 1;
+    margin-left: 20px;
+
+    .date_wrapper {
+      font-size: 14px;
+      color: #9ba2a9;
+      margin-bottom: 5px;
+      margin-right: auto;
+    }
+
+    .content_wrapper {
+      font-size: 15px;
+      font-weight: 600;
+      word-break: break-all;
+    }
+  }
+
+  .modal-open-btn > .info_section > .content_wrapper {
+    word-break: break-all;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .button_edit {
+    cursor: pointer;
+  }
+
+  .button_section {
+    min-width: 70px;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+}

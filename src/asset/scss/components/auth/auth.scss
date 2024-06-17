@@ -1,0 +1,226 @@
+
+//로그인화면
+.login_logo{
+    width: 120px;
+    margin: 40px 0 30px;
+}
+
+.loginWrap{
+
+    .inputBox{
+        
+        input{
+            display: block;
+            width: 350px;
+            height: 50px;
+            margin: 0 auto;
+            border:2px solid #fd7b54;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        +input{
+            margin-bottom: 0;
+        }
+        }
+    }
+
+    .btnBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 754px;
+        gap: 10px;
+        margin: 30px auto;
+        padding: 30px 0;
+        border-top:1px solid #ddd;
+        box-sizing: border-box;
+        a{
+            display: block;
+        button{
+            width: 350px;
+            height: 50px;
+            color:#fff;
+            font-size: 16px;
+            border-radius: 30px;
+            @include mobile{
+                width: 100%;
+            }
+            } 
+        }
+        a:first-child{
+            button{
+                background: #fd7b54;
+            }
+            
+        } 
+        a:last-child{
+            button{
+                background: #222;
+            }
+        }
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .findLinkBox{
+        width: 300px;
+        margin: 40px auto 70px;
+        a{
+            position: relative;
+            float: left;
+            display: block;
+            width: 130px;
+            padding: 10px 7px;
+            text-align: center;
+            color:#fd7b54;
+            font-size: 14px;
+            
+            + a{
+                float: right;
+            }
+        }
+        a:first-child:after{
+            position: absolute;
+            top: 10px;
+            right: -5px;
+            display: block;
+            content: '';
+            width: 1px;
+            height: 20px;
+            background: $primary;
+        }
+    }
+}
+
+//회원가입
+.joinWrap{
+    .tit{
+        padding: 20px 15px;
+        border-bottom:1px solid #ddd;
+        h5{
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+    .panel{
+        margin-bottom: 30px;
+        ul{
+            li{
+                padding: 15px;
+            }
+        }
+        p{
+            padding: 15px;
+            font-size: 13px;
+            color:$sub;
+            border-top:1px solid #ddd;
+        }
+    }
+      /* 체크박스 */
+    input[type=checkbox] + label {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        background: url("https://api.iconify.design/ion/checkmark.svg?color=white")
+        no-repeat center center / contain;
+        background-color: #999;
+        cursor: pointer;
+    }
+    input[type=checkbox]:checked + label {
+        background: url("https://api.iconify.design/ion/checkmark.svg?color=white")
+        no-repeat center center / contain;
+        background-color: #fd7b54;
+        border: none;
+    }
+    input[type=checkbox] {
+        display: none;
+        appearance: none;
+    }
+    input[type=checkbox] + label + span{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5px;
+    }
+  
+    // 정보입력
+    .formWrap{
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        padding: 14px;
+        box-sizing: border-box;
+        //outline: 1px solid red;
+        input{
+            width: 100%;
+            padding: 7px 10px;
+            border:2px solid $primary;
+            border-radius: 5px;
+            box-sizing: border-box;
+            :focus{border-color: $primary;}
+            +p.msg{
+                position: absolute;
+                color:red;
+                font-size: 12px;
+            }
+        }
+        button{position: absolute; right: 10px; top: 50%; transform: translateY(-50%);}
+        button.t0{
+            top: 0;
+            transform: translateY();
+        }
+    }
+    .formWrap.w-btn{
+        padding-right: 100px;
+    }
+    .formWrap.w-input{
+        //padding-right: 260px;
+        input{
+            width: 45%;
+            +span{
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-70%,-50%);
+            }
+        }
+        select{
+            position: absolute;
+            right: 14px; 
+            top: 50%; 
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 220px; 
+            padding: 7px 10px;
+            border:2px solid $primary;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+//주소찾기 팝업
+popupDom {
+        position: fixed;
+        width: 300px !important;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        z-index: 100;
+    >div{
+        border: 2px solid #222;
+    }
+    .closeBtn{
+        position: absolute;
+        right: -45px;
+        top: -45px;
+        cursor: pointer;
+    }
+}
+
+
+// 아이디 찾기 & 비밀번호 찾기

@@ -1,0 +1,56 @@
+/* 변수 */
+
+/* color */
+$primary: #fd7b54;
+$sub: #9ba2a9;
+$lprimary: #ffe4db;
+
+/* Responsive layout, breakpoint */
+
+$mobile-max: 700px;
+$tablet-max: 1023px;
+$desktop-min: 1024px;
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet-max) and (min-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-min) {
+    @content;
+  }
+}
+
+/* 공통 */
+@import "./common.css";
+@import "./layout.scss";
+@import "./main.scss";
+/* 컴포넌트 */
+@import "./components/map/map.scss";
+@import "./components/auth/auth.scss";
+@import "./components/search/result.scss";
+@import "./components/calc/calc.scss";
+/* 모달 */
+@import "./components/modal/modal.scss";
+@import "./components/modal/modalList.scss";
+
+// 다이어리 컴포넌트
+@import "./components/diary/Editor.scss";
+@import "./components/diary/DiaryList.scss";
+@import "./components/diary/DiaryItem.scss";
+@import "./components/diary/DiaryHeader.scss";
+@import "./components/diary/Button.scss";
+@import "./components/diary/EmotionItem.scss";
+
+/* 보드 컴포넌트*/
+@import "./components/board/board.scss";
+
+/* 로그인/ 아이디비밀번호 찾기 */
+@import './components/auth/Search_id.scss';
+@import './components/auth/Search_pw.scss';

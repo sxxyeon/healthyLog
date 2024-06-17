@@ -1,0 +1,159 @@
+.searchContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  max-width: 940px;
+  display: flex;
+  flex-direction: column;
+  .searchBox {
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    margin-top: 60px;
+    .foodSearch {
+      font-size: 20px;
+      padding: 10px 40px 10px 20px;
+      border: 2px #fd7b54 solid;
+      //width: 400px;
+      border-radius: 50px;
+      outline: none;
+    }
+    .imgButton {
+      border: none;
+      position: absolute;
+      right: 10px;
+      top: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  p.totalCount{
+    align-self: center;
+    font-size: 12px;
+    margin-top: 30px;
+    span{font-size: 15px; font-weight: bold;}
+  }
+  p.noResult {
+    font-size: 13px;
+    color: #555;
+  }
+}
+
+// 하단 검색 결과
+.foodBox {
+  width: 100%;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  .foodList {
+    backdrop-filter: blur(5px); //??
+    width: 250px;
+    height: 220px;
+    margin: 20px;
+    //체크박스
+    input[type="checkbox"] {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: url("https://api.iconify.design/ion/checkmark.svg?color=white")
+        no-repeat center center / contain;
+      background-color: #999;
+      appearance: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    input[type="checkbox"]:checked {
+      background: url("https://api.iconify.design/ion/checkmark.svg?color=white")
+        no-repeat center center / contain;
+      background-color: #fd7b54;
+      border: none;
+    }
+
+    .searchResult {
+      display: flex;
+      justify-content: center;
+      h2 {
+        width: 230px;
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .ingredient {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        position: absolute;
+        bottom: 10%;
+        p {
+          font-size: 14px;
+          line-height: 25px;
+          width: 105px;
+          margin: 5px 5px;
+        }
+        //좌측 영양성분
+        .ingredient1 {
+          border-right: 1px solid #ddd;
+          padding-right: 1px;
+          height: 100px;
+          color: #555;
+        }
+        //우측 영양성분
+        .ingredient2 {
+          padding-left: 3px;
+          height: 100px;
+          color: #555;
+        }
+      }
+    }
+  }
+}
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 10px;
+  padding-bottom: 30px;
+  li{
+    cursor: pointer;
+    padding: 10px;
+    
+  }
+  li.selected{
+    background-color: #fd7b54;
+    color:#fff;
+  }
+}
+
+.prevButton {
+  position: fixed;
+  height: 80px !important;
+  padding: 15px;
+  right: 10%;
+  bottom: 10%;
+  color: #fff;
+  border-radius: 100%;
+  background: $primary;
+  box-shadow: 0 1px 4px rgb(0, 0, 0, 60%);
+  z-index: 2;
+}
+
+// .searchContainer > p {
+//   position: absolute;
+//   top: 200%;
+//   width: 200px;
+// }

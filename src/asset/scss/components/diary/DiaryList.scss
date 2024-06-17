@@ -1,0 +1,162 @@
+.DiaryList {
+  .menu_wrapper {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    //왼쪽 셀렉
+    .left_col {
+      select {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 90px;
+        padding: 12px 0px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        color: #9ba2a9;
+      }
+    }
+    //오른쪽 셀렉
+    .right_col {
+      position: absolute;
+      right: 0;
+      top: 0;
+      .button_plus {
+        position: absolute;
+        top: 8px;
+        right: 20%;
+        color: white;
+        cursor: pointer;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        //font-family: 'TAEBAEKmilkyway';
+        font-weight: bold;
+      }
+    }
+  }
+  //검색 부분
+  .search_wrapper {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input.tool_bar {
+      line-height: 40px;
+      border: 2px solid #fd7b54;
+      border-radius: 40px;
+      width: 240px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.modal-open-btn {
+  .info_section {
+    .content_wrapper {
+      word-break: break-all;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
+}
+
+.modal-open-button,
+.modal-close-btn {
+  cursor: pointer;
+  right: 15%;
+  position: fixed;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+
+  .img_section {
+    width: 140px;
+    height: 140px;
+    margin: auto;
+  }
+
+  .info_section {
+    width: 90%;
+    margin: 0 auto !important;
+
+    .info_section .date_wrapper {
+      text-align: center;
+    }
+  }
+}
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  width: 70%;
+  min-height: 350px;
+  max-width: 500px;
+  max-height: 400px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px 3px rgb(0, 0, 0, 0.2);
+  .img_section {
+    width: 80px;
+    margin-bottom: 30px;
+    // border-bottom: 1px solid #eee;
+    // border-radius: 100% !important;
+  }
+  svg.button_edit {
+    position: absolute;
+    right: 23px;
+    bottom: 23px;
+  }
+  svg.modal-close-btn {
+    position: absolute;
+    right: 23px;
+    border-top: 23px;
+  }
+}
+.modal-open-btn {
+  cursor: pointer;
+}
+.modal-content {
+  .info_section {
+    margin: auto;
+  }
+}
+.modal-open-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.loadMoreButton {
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 3px;
+  font-weight: 800;
+  color: #fff;
+  margin: auto;
+}

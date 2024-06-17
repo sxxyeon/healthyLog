@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* @import url("font.css"); */
+
+/* reset */
+*{text-decoration: none;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0; font-family: '맑은고딕', 'MalgunGothic', Arial, Helvetica, sans-serif; letter-spacing: -0.04em;}
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{-webkit-text-size-adjust:none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;clear:both;}
+html,body{height:100%;}
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-y:scroll;}
+a{display:inline-block;text-decoration:none;-webkit-tap-highlight-color:transparent;color:#1a1a1a;background:transparent;}
+a:active{outline:0;}
+a:active{color:#3990e6;}
+audio, canvas, progress, video{display:inline-block;vertical-align:baseline;}
+audio:not([controls]){display:none;height:0;}
+svg:not(:root){overflow:hidden;}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}
+pre{overflow:auto;white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
+code, kbd, pre, samp{font-family:monospace;font-size:16px;}
+mark{background:#ff0;color:#1a1a1a;}
+dfn{font-style:italic;}
+table{width:100%;border-spacing:0;border-collapse:collapse; word-break:keep-all;}
+caption{display:block;position:absolute;left:-9999px;}
+button{overflow:hidden;background-color:transparent;cursor:pointer;}
+button:-moz-focus-inner{border:0px;padding:0px;}
+td{padding:0;} 
+th{padding:0; font-weight:700;}
+ul, ol{list-style:none outside none;}
+em{font-style:normal;}
+img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
+b, strong{font-weight:normal;}
+fieldset, iframe{width:100%;}
+legend{font-size:0;text-indent:-99999em;line-height:0}
+img, a, frame, iframe, fieldset{border:0;}
+button, input, optgroup, select, textarea{color:inherit;font:inherit;margin:0;}
+button{overflow:visible;border:0;}
+button, select{text-transform:none;}
+button, html input[type="button"],
+input[type="reset"],
+input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
+button:disabled,
+html input:disabled{cursor:default;}
+button:-moz-focus-inner,
+input:-moz-focus-inner{border:0;padding:0;}
+button:focus {outline:none;}
+input{line-height:normal;}
+input[type="checkbox"],
+input[type="radio"]{box-sizing:border-box;padding:0;}
+input[type="number"]:-webkit-inner-spin-button,
+input[type="number"]:-webkit-outer-spin-button{height:auto;}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+input[type="search"]:-webkit-search-cancel-button,
+input[type="search"]:-webkit-search-decoration{-webkit-appearance:none;}
+textarea{overflow:auto;resize:none;outline:0;}
+input::-moz-placeholder, textarea::-moz-placeholder{color:#999;}
+input::-ms-input-placeholder, textarea::-ms-textarea-placeholder{color:#999;}
+input::-webkit-input-placeholder, textarea::-webkit-textarea-placeholder{color:#999;}
+input::placeholder, textarea::placeholder {color:#999;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+/* commos */
+.blind{display:inline-block;position:absolute !important;height:0;overflow:hidden;color:transparent !important;}
+.i-block {display:inline-block !important;}
+.block {display:block !important;}
+.fl{float:left;}
+.fr{float:right;}
+.tl{text-align:left !important;}
+.tr{text-align:right !important;}
+.tc{text-align:center !important;}
+.hide{display:none !important;}
+.show{display:block !important;}
+.hidden{visibility:hidden !important;}
+.visible{visibility:visible !important;}
+.ellipsis{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.break{word-break:break-all;word-wrap:break-word;}
+.clearfix{*zoom:1;}
+.clearfix:after{content:'\0020';display:block;height:0;clear:both;}
+.pointer {cursor:pointer;}
+
+/* margin */
+.mt0{margin-top:0 !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mt40{margin-top:40px !important;}
+.mt50{margin-top:50px !important;}
+.mr0{margin-right:0 !important;}
+.mb0{margin-bottom:0 !important;}
+.mb20{margin-bottom:20px !important;}
+.mb40{margin-bottom:40px !important;}
+.ml0{margin-left:0 !important;}
+.ml3{margin-left:3px !important;}
+.ml5{margin-left:5px !important;}
+.ml6{margin-left:6px !important;}
+.ml8{margin-left:8px !important;}
+.ml10{margin-left:10px !important;}
+.ml20{margin-left:20px !important;}
+.ml50{margin-left:50px !important;}
+.ml70{margin-left:70px !important;}
+.mr3{margin-right:3px !important;}
+.mr5{margin-right:5px !important;}
+.mr6{margin-right:6px !important;} 
+
+/* padding */
+.pt0{padding-top:0 !important;}
+.pt40{padding-top:40px !important;}
+.pr0{padding-right:0 !important;}
+.pb0{padding-bottom:0 !important;}
+.pb25{padding-bottom:25px !important;}
+.pl0{padding-left:0 !important;}
+.pl20{padding-left:20px !important;}
+.pl30{padding-left:30px !important;}
+.pl40{padding-left:40px !important;}
+
+/* 폰트 굵기 */
+.fw-light {font-weight:300;}
+.fw-normal {font-weight:400;}
+.fw-bold {font-weight:700;}
+
+/* input 기본 스타일 초기화 */
+input{
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input:-ms-clear{display:none;}
+
+

@@ -1,0 +1,67 @@
+.search_pw_wrapper {
+  width: 60%;
+  width: 400px;
+  margin: 10px auto 100px;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  @include mobile{
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .search_name {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid $sub;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .search_email_wrapper {
+    margin-bottom: 20px;
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid $sub;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    input:last-of-type{margin-bottom: 0;}
+  }
+
+  .result_wrapper {
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #ff0000;
+    /* 또는 원하는 다른 색상 */
+  }
+
+  .btn_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+    button {
+      padding: 10px 7px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 50%;
+    }
+    button:nth-child(1) {
+      background-color: #222;
+      color: #fff;
+    }
+    button:nth-child(2) {
+      background-color: #fd7b54;
+      color: #fff;
+    }
+  }
+}

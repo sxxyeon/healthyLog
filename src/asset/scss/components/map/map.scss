@@ -1,0 +1,312 @@
+.mapWrap{
+    padding: 60px 0px;
+    margin-bottom: 60px;
+    background: #f5f5f5;
+    border-radius: 30px;
+        @include mobile{
+        padding: 20px 0 30px;
+        background: none;
+        box-shadow: none;
+        margin-bottom: 40px;
+        }
+    .panel{
+        margin: 30px 0;
+        box-shadow: none;
+    }
+}
+.MapContainer{
+    position:relative;
+    width: 100%;
+    max-height: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    z-index: 1;
+    @include mobile{
+        width: calc(100vw - 40px);
+    }
+    #__react-kakao-maps-sdk___Map{
+        width: 100%;
+        height: 100vh;
+        margin:0 auto;
+        max-width:800px;
+        max-height:600px; 
+        @include mobile{
+            width: calc(100vw - 40px) !important;
+            height: calc(100vw - 40px)!important;
+            max-width:600px;
+        }
+    }
+    .GoBackButton{
+        position: absolute;
+        bottom: 35px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 10;
+        padding: 0;
+    }
+    .ReSearchButton{
+        position: absolute;
+        color: white;
+        font-size: 13px;
+        font-weight:600;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 140px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 30px;
+        background-color: #fd7b54;
+        border:none;
+    }
+    .DetailLink{
+        text-align: center;
+        padding: 10px 0;
+         svg:not(.root){ padding-top: 4px;}
+    }
+    .DetailInfo{
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 1px 4px rgb(0,0,0,20%);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .arrow{
+            width: 20px;
+            height: 10px;
+            overflow: hidden;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+    
+            &::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                border: 1px solid #bbb;
+                background-color: white;
+                transform: rotate(45deg);
+                transform-origin: 0 0;
+                position: absolute;
+                bottom: 6px;
+                left: 50%;
+            }
+        }
+        .placeName{
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 5px 13px 10px;
+        }
+    }
+
+    
+    .searchList{
+        position: absolute; 
+        left: 0px;
+        top:0;
+        width: 200px;
+        height:730px;
+        border:1px solid #eee;
+        background:#fff;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* 인터넷 익스플로러 */
+        scrollbar-width: none; /* 파이어폭스 */
+        li{
+            width: 100%;
+            height: 70px;
+            border:1px solid #eee;
+            box-sizing: border-box;
+            a{display: block; height: 65px; padding: 5px 5px 0 5px;} 
+            span{
+                 padding: 0; font-size: 14px; color:#9ba2a9;  overflow: hidden;
+            }
+            span.name{ 
+                display:-webkit-box; 
+                word-wrap:break-word; 
+                -webkit-line-clamp:2; 
+                -webkit-box-orient:vertical; 
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                font-size: 14px; 
+                color:#000;
+                font-weight: 700;
+            }
+            span.address{
+                display: block; font-size: 13px; color:#9BA2A9; margin-top: 3px;
+                overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+            }
+        }
+    }::-webkit-scrollbar {
+        display: none;
+      }
+    
+}
+
+// 검색결과 상점 리스트 모달 창
+
+.modalWrap.w{
+//pc 사이드바
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+
+.modalContainer {
+    width: 200px;
+    height: calc(100vw - 40px) !important;
+    border:1px solid #eee;
+    max-height: 600px;
+    overflow:scroll;
+    margin: 0 auto;
+    box-shadow: 0 0px 4px rgb(0,0,0,20%);
+    z-index: 1;
+    .modalCont{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        ul{
+            width: 200px;
+            background: rgb(255,255,255,.8);
+            box-sizing: border-box;
+            z-index: 1;
+            li{
+                cursor:pointer;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                box-sizing: border-box;
+                p{
+                    display: block;
+                    font-size: 12px;
+                    color:#555;
+                }
+                p.psName{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color:#000;
+                    display: -webkit-box;
+                    word-wrap: break-word;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                p.psAddr{
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                p.psCate{
+                    font-size: 11px;
+                    color:#888;
+                }
+                p.psPhone{
+                    font-weight: 600;
+                    margin-top: 3px;
+                }
+            }
+        +p{
+
+        }
+        }
+    }
+}
+}
+.SideBarOpenBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 50px;
+    background: #555;
+    border-radius: 0 7px 7px 0;
+    z-index: 2;
+}
+
+
+
+// 상점리스트 모바일 버전 모달
+.modalWrap.m{
+    
+    .modalContainer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 30vh;
+        max-height:250px;
+        z-index: 10;
+        background: rgb(255,255,255,0.6);
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -2px 8px rgb(0,0,0,15%);
+        overflow: scroll;
+        .modalCont{
+            .closeBtn{
+                position: fixed;
+                bottom: 30vh;
+                right: 7px;
+            }
+            ul{
+                padding-top: 30px;
+                background: rgb(255,255,255,.6);
+                li{
+                    cursor:pointer;
+                    width: 100%;
+                    padding: 10px;
+                    border-bottom: 1px solid #eee;
+                    box-sizing: border-box;
+                    p{
+                        display: block;
+                        font-size: 12px;
+                        color:#555;
+                    }
+                    p.psName{
+                        font-size: 14px;
+                        font-weight: 600;
+                        color:#000;
+                        display: -webkit-box;
+                        word-wrap: break-word;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    p.psAddr{
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }   
+                    p.psCate{
+                        font-size: 11px;
+                        color:#888;
+                    }
+                    p.psPhone{
+                        font-weight: 600;
+                        margin-top: 3px;
+                    }
+                }
+                li:first-child{
+                    //padding-top: 30px;
+                }
+            }
+        }
+        
+    }
+    .modalOpenBtn{
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        padding: 3px 7px;
+        font-size: 13px;
+        background: #222;
+        color:#fff;
+        border-radius: 7px;
+        z-index: 1;
+    } 
+}
