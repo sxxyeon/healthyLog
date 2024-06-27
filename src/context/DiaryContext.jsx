@@ -47,7 +47,7 @@ const DiaryProvider = ({ children }) => {
     }
     await axios.put(`${process.env.REACT_APP_JSON}/diary/${id}`, options)
     fetchData()
-    window.location.reload()
+    window.location.reload();
   }
   const onDelete = async (id) => {
     await axios.delete(`${process.env.REACT_APP_JSON}/diary/${id}`)
