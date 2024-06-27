@@ -1,58 +1,55 @@
 .DiaryList {
   .menu_wrapper {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    gap:10px;
     //왼쪽 셀렉
     .left_col {
       select {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 90px;
-        padding: 12px 0px;
-        border: 1px solid #ddd;
+        max-width: 80px;
+        padding: .5rem;
+        border:1px solid #ddd;
         border-radius: 5px;
         box-sizing: border-box;
-        cursor: pointer;
-        color: #9ba2a9;
+        font-size: 13px;
       }
     }
     //오른쪽 셀렉
     .right_col {
-      position: absolute;
-      right: 0;
-      top: 0;
-      .button_plus {
-        position: absolute;
-        top: 8px;
-        right: 20%;
-        color: white;
-        cursor: pointer;
-      }
       button {
+        position: relative;
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        //font-family: 'TAEBAEKmilkyway';
         font-weight: bold;
+
+        .button_plus {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
   }
   //검색 부분
   .search_wrapper {
-    height: 45px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
     input.tool_bar {
-      line-height: 40px;
-      border: 2px solid #fd7b54;
-      border-radius: 40px;
-      width: 240px;
-      padding: 0 20px;
-      margin: 0 auto;
+      padding: .5rem;
+      margin-right: 40px;
+      border:2px solid $primary;
+      border-radius: 20px;
+      box-sizing: border-box;
+      min-width: 100px; 
+      
     }
   }
 }

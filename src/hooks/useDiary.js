@@ -7,7 +7,6 @@ const useDiary = (id) => {
   const navigate = useNavigate();
   useEffect(() => {
     const matchDiary = data.find((item) => String(item.id) === String(id));
-    console.log(matchDiary)
     if (matchDiary) {
       setDiary(matchDiary);
     } else {

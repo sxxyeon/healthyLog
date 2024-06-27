@@ -9,7 +9,6 @@ import DiaryList from './DiaryList';
 
 const Home = () => {
   const data = useContext(DiaryStateContext);
-  console.log(data)
   const [pivotDate, setPivotDate] = useState(new Date());
   const DiaryHeaderTitle = `${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1
     }월`;
