@@ -29,11 +29,6 @@ const InfoDetail = () => {
     navigate('/board', { state: { selectedMenu: '다이어트 정보' } })
   }
 
-  const listBtn = (
-    <button onClick={moveToList} className="btn btn04 sm-txt">
-      목록으로
-    </button>
-  )
   return (
     <>
       <div className="detailBox">
@@ -41,7 +36,6 @@ const InfoDetail = () => {
           {/* 게시글 제목 */}
           <h2>{selectedBoard.title}</h2>
           {/* 목록 버튼 */}
-          <div className="lintBtn">{listBtn}</div>
         </div>
 
         <hr />

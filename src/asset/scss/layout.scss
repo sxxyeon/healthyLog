@@ -121,12 +121,10 @@ body {
       height: 170px;
       max-width: 940px;
       margin: 0 auto;
-      background: url(../img/chilcken.png) no-repeat;
-      background-size: 380px;
-      background-position: 0 10px;
       ul {
         position: absolute;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
         top: 10px;
         width: 60%;
         max-width: 590px;
