@@ -36,7 +36,7 @@ const Home = () => {
 
 
   return (
-      <div className="contWrap mb40">
+      <>
         <DiaryHeader
           title={DiaryHeaderTitle}
           leftChild={
@@ -61,7 +61,7 @@ const Home = () => {
               type={"negative"} />}
         />
         <DiaryList data={filteredData} />
-      </div>
+      </>
   );
 };
 export default Home;

@@ -99,11 +99,6 @@ const Editor = ({ initData, onSubmit }) => {
                     </p>
                 </div>
             </div>
-
-            {/* <div className="">
-                <Button text={"이전으로"} onClick={handleOnGoBack} />
-                <Button text={"저장하기"} type={"positive"} onClick={handleSubmit} />
-            </div> */}
             <div className="btnBox">
                 <Button text={"이전으로"} onClick={handleOnGoBack} />
                 <Button text={"저장하기"} type={"positive"} onClick={handleSubmit} />

@@ -1,3 +1,4 @@
+
 .calcWrap {
   width: 100%;
   background-color: #f5f5f5;
@@ -9,10 +10,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    column-gap:10px;
+    row-gap:20px;
+    align-items: center;
     li {
       position: relative;
-      margin-right: 15px;
-      margin-bottom: 20px;
       p.label {
         position: absolute;
         left: 10px;
@@ -23,15 +25,19 @@
       }
 
       input {
-        width: 90px;
-        padding: 10px;
+        width: 70px;
+        height: 40px;
+        padding: 3px;
         border: 2px solid $primary;
         border-radius: 30px;
+        box-sizing: border-box;
       }
       select {
-        padding: 10px;
+        height: 40px;
+        padding: 3px;
         border: 2px solid $primary;
         border-radius: 20px;
+        box-sizing: border-box;
       }
       button.enterBtn {
         width: 100px;
@@ -65,11 +71,11 @@
     box-sizing: border-box;
     .inputBox {
       position: relative;
-      width: 270px;
+      width: 150px;
       margin: 0 auto;
       input {
         box-sizing: border-box;
-        width: 270px;
+        width: 100%;
         height: 44px;
         padding: 15px;
         border-radius: 30px;
@@ -93,6 +99,14 @@
     margin-bottom: 10px;
     font-weight: 600;
     text-align: center;
+  }
+}
+
+@include mobile{
+  .calcWrap{
+    .bmi{
+      padding: 20px 20px 0;
+    }
   }
 }
 
@@ -166,7 +180,7 @@
       background-color: $primary;
     }
     p {
-      font-size: 16px;
+      font-size: 13px;
       margin-top: 5px;
       text-align: center;
       font-weight: 600;
@@ -174,7 +188,7 @@
     }
   }
   p {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #555;
     .kcalText {
@@ -188,8 +202,8 @@
   position: fixed;
   height: 80px !important;
   padding: 15px;
-  right: 10%;
-  bottom: 10%;
+  right: 20px;
+  bottom: 80px;
   color: #fff;
   border-radius: 100%;
   background: $primary;

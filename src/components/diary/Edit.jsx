@@ -36,7 +36,7 @@ const Edit = () => {
     return <div>일기를 불러오고 있습니다...</div>
   } else {
     return (
-      <div className="contWrap mb40">
+      <>
         <DiaryHeader
           title={'수정하기'}
           leftChild={
@@ -63,7 +63,7 @@ const Edit = () => {
           }
         />
         <Editor initData={data} onSubmit={onSubmit} />
-      </div>
+      </>
     )
   }
 }

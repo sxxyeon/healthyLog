@@ -26,7 +26,7 @@
     }
   }
   .editor_section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     width: 100%;
     text-align: center;
     .input_wrapper {
@@ -123,9 +123,9 @@
       color: #777;
     }
 
-    @include mobile {
-      display: flex;
-      flex-direction: column;
-    }
+    // @include mobile {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
   }
 }

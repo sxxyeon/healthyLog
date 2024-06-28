@@ -2,13 +2,6 @@ html,
 body {
   margin: 0;
   max-width: 100%;
-  // overflow-x: hidden;
-  // overflow-y: scroll;
-  // -ms-overflow-style: none; /* 인터넷 익스플로러 */
-  // scrollbar-width: none; /* 파이어폭스 */
-  // ::-webkit-scrollbar {
-  //   display: none;
-  // }
 }
 
 /* contents wrap */
@@ -35,7 +28,7 @@ body {
       display: block;
       position: absolute;
       top: 15px;
-      right: 120px;
+      right: 65px;
       font-size: 13px;
       padding: 5px 14px;
       color: #fff;
@@ -402,8 +395,7 @@ input[type="radio"] {
   }
   
 @include mobile{
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
 }
 }
 

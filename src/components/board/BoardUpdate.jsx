@@ -82,7 +82,7 @@ const BoardUpdate = () => {
       charLeft={charLeft}
     >
       <BtnBox
-        text1={'목록으로'}
+        text1={'이전으로'}
         text2={'저장'}
         func1={backToDetail}
         func2={handleSave}

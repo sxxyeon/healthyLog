@@ -14,6 +14,7 @@
   text-align: center;
   padding: 7px;
   border: 2px solid $primary;
+  background: #fff;
   color: $primary;
   text-align-last: center;
   font-size: 18px;
@@ -62,7 +63,7 @@ li.boardContents:last-of-type {
   position: relative;
   box-sizing: border-box;
   @include mobile {
-    margin: 60px auto 80px;
+    margin: 60px auto 10px;
   }
 }
 
@@ -153,13 +154,22 @@ li.boardContents:last-of-type {
 
 .detailBtn {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 15px 0 60px;
   border-top: 1px solid #555;
   > div {
     display: flex;
-    gap: 10px;
     flex-direction: row;
+    button{
+      padding: 4px;
+      height: 40px;
+    }
+  }
+  .moveBtn2{
+    display: flex;
+    flex-direction: row;
+    gap:7px;
   }
 }
 

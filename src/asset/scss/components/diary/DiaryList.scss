@@ -10,6 +10,7 @@
     .left_col {
       select {
         max-width: 80px;
+        height: 40px;
         padding: .5rem;
         border:1px solid #ddd;
         border-radius: 5px;
@@ -43,6 +44,7 @@
     text-align: center;
     min-width: 0;
     input.tool_bar {
+      height: 40px;
       padding: .5rem;
       margin-right: 40px;
       border:2px solid $primary;

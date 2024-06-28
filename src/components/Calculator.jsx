@@ -80,9 +80,6 @@ const Calculator = React.memo((checkBox) => {
   // 페이지 넘어오면 목표인풋에 커서 올리기
   const inputRef = useRef(null)
 
-  useEffect(() => {
-    inputRef.current.focus()
-  }, [])
 
   // 배열 kcal 합치기 # 복습필요
   const kcalTotal = initialData.reduce(
