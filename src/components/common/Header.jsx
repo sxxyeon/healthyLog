@@ -99,6 +99,7 @@ const Header = () => {
               to="/auth/login"
               className="loginBtn"
               style={{ display: dropdownVisible ? 'block' : 'none' }}
+              onClick={handleLinkClick}
             >
               로그인
             </Link>

@@ -51,8 +51,15 @@
       font-size: 15px;
       font-weight: 600;
       word-break: break-all;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
     }
   }
+
+  // 일기 모달
 
   .modal-open-btn > .info_section > .content_wrapper {
     word-break: break-all;

@@ -5,14 +5,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
-    gap:10px;
+    gap: 10px;
     //왼쪽 셀렉
     .left_col {
       select {
         max-width: 80px;
         height: 40px;
-        padding: .5rem;
-        border:1px solid #ddd;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
         border-radius: 5px;
         box-sizing: border-box;
         font-size: 13px;
@@ -45,36 +45,23 @@
     min-width: 0;
     input.tool_bar {
       height: 40px;
-      padding: .5rem;
+      padding: 0.5rem;
       margin-right: 40px;
-      border:2px solid $primary;
+      border: 2px solid $primary;
       border-radius: 20px;
       box-sizing: border-box;
-      min-width: 100px; 
-      
+      min-width: 100px;
     }
   }
 }
 
 .modal-open-btn {
-  .info_section {
-    .content_wrapper {
-      word-break: break-all;
-      display: -webkit-box;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-    }
-  }
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
-.modal-open-button,
-.modal-close-btn {
-  cursor: pointer;
-  right: 15%;
-  position: fixed;
-}
+// 일기 모달 부분
 
 .modal-container {
   width: 100%;
@@ -87,65 +74,53 @@
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
   z-index: 3;
-
-  .img_section {
-    width: 140px;
-    height: 140px;
-    margin: auto;
-  }
-
-  .info_section {
-    width: 90%;
-    margin: 0 auto !important;
-
-    .info_section .date_wrapper {
-      text-align: center;
-    }
-  }
-}
-
-.modal-content {
-  position: relative;
-  background-color: #ffffff;
-  width: 70%;
-  min-height: 350px;
-  max-width: 500px;
-  max-height: 400px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  box-shadow: 0 1px 4px 3px rgb(0, 0, 0, 0.2);
-  .img_section {
-    width: 80px;
-    margin-bottom: 30px;
-    // border-bottom: 1px solid #eee;
-    // border-radius: 100% !important;
-  }
-  svg.button_edit {
-    position: absolute;
-    right: 23px;
-    bottom: 23px;
-  }
   svg.modal-close-btn {
     position: absolute;
-    right: 23px;
+    right: 20px;
+    top: 20px;
     border-top: 23px;
   }
-}
-.modal-open-btn {
-  cursor: pointer;
-}
-.modal-content {
-  .info_section {
-    margin: auto;
+  .modal-content {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+    max-width: 500px;
+    max-height: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px 3px rgb(0, 0, 0, 0.2);
+    .cont {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 20px;
+
+      .img_section {
+        width: 80px;
+        margin-bottom: 30px;
+        margin: auto;
+      }
+      .modal_info {
+        flex: 1;
+        background: #ddd;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 600;
+        .date_wrapper {
+          color:#888;
+          padding-bottom: 10px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    svg.button_edit {
+      position: absolute;
+      right: 23px;
+      bottom: 23px;
+    }
   }
-}
-.modal-open-btn {
-  width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .loadMoreButton {
@@ -157,5 +132,5 @@
   box-shadow: 0 0 3px;
   font-weight: 800;
   color: #fff;
-  margin: auto;
+  margin: 0 auto 40px;
 }

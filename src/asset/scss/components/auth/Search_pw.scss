@@ -5,7 +5,7 @@
   padding: 20px;
   background-color: #fff;
   border-top: 1px solid #eee;
-  @include mobile{
+  @include mobile {
     width: 100%;
     padding: 20px 0;
   }
@@ -15,26 +15,14 @@
     margin-bottom: 20px;
   }
 
-  .search_name {
-    width: calc(100% - 20px);
+  input {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid $sub;
     border-radius: 5px;
     display: inline-block;
-  }
-
-  .search_email_wrapper {
-    margin-bottom: 20px;
-    input {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 2px solid $sub;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    input:last-of-type{margin-bottom: 0;}
+    box-sizing: border-box;
   }
 
   .result_wrapper {
@@ -47,7 +35,7 @@
   .btn_wrapper {
     display: flex;
     justify-content: space-between;
-    gap:10px;
+    gap: 10px;
     button {
       padding: 10px 7px;
       border: none;

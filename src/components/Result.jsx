@@ -111,7 +111,12 @@ const Result = () => {
               setCurrentPage(paginationStart - 1)
             }}
           >
-            {'<'}
+            <FeatherIcon
+              className="button_return"
+              icon="chevron-left"
+              size="15"
+              fill="#333"
+              strokeWidth="1"/>
           </li>
         )}
         {pages}
@@ -119,7 +124,12 @@ const Result = () => {
           <li onClick={() => {setPaginationStart(paginationStart + 10)
             setCurrentPage(paginationStart + 10)
           }}>
-            {'>'}
+            <FeatherIcon
+              className="button_return"
+              icon="chevron-right"
+              size="15"
+              fill="#333"
+              strokeWidth="1"/>
           </li>
         )}
       </ul>

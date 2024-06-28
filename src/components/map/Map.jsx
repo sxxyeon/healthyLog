@@ -203,8 +203,6 @@ const Map2 = () => {
           <button 
             className='GoBackButton'
             onClick={goBack}
-            // onMouseEnter={handleMouseEnter}
-            // onMouseLeave={handleMouseLeave}
           ><FeatherIcon icon="crosshair" width="30" height="30" stroke='#fd7b54' fill="#fff"/>
           </button> 
           {/* 현 지도에서 키워드 재검색 버튼 */}
@@ -272,6 +270,7 @@ const Map2 = () => {
         {/* 모바일 화면일 경우 검색 결과 모달로 표시 */}
         {isMobile && (
           <div className="modalWrap m">
+            
             <MapModal
               isMobile={isMobile}
               search={search}

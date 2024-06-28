@@ -1,43 +1,28 @@
 .search_id_wrapper {
-  width: 60%;
   width: 400px;
   margin: 10px auto 100px;
   padding: 20px;
   background-color: #fff;
   border-top: 1px solid #eee;
-  @include mobile{
+
+  @include mobile {
     width: 100%;
     padding: 20px 0;
   }
-
 
   h3 {
     font-size: 24px;
     margin-bottom: 20px;
   }
 
-  .search_name {
-    width: calc(100% - 20px);
+  input {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid $sub;
     border-radius: 5px;
-  }
-
-  .search_email_wrapper {
-    //margin-bottom: 20px;
-
-    input {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 2px solid $sub;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    input:last-of-type {
-      margin-bottom: 0px;
-    }
+    display: inline-block;
+    box-sizing: border-box;
   }
 
   .result_wrapper {
@@ -48,15 +33,16 @@
   }
 
   .btn_wrapper {
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    gap:10px;
+    gap: 10px;
     button {
       padding: 10px 7px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      width: 50%;
+      width: 100%;
     }
     button:nth-child(1) {
       background-color: #222;
@@ -70,9 +56,9 @@
   .linkWrapper {
     font-size: 11px;
     margin-top: 10px;
-    color:$primary;
+    color: $primary;
   }
-  .warnMark{
+  .warnMark {
     display: inline-block;
     color: #fff;
     background: $primary;
@@ -84,13 +70,13 @@
     text-align: center;
     margin-right: 4px;
   }
-  .foundId{
+  .foundId {
     padding: 30px;
     margin: 15px 0 0;
     background: $lprimary;
     //box-shadow: 0 1px 4px 3px rgb(0,0,0,10%);
     border-radius: 15px;
     text-align: center;
-    color:#555;
+    color: #555;
   }
 }

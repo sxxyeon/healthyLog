@@ -10,7 +10,7 @@ const Join3 = () => {
             <h4>회원가입이<br/>완료되었습니다</h4>
             <p>다양한 서비스를 이용해보세요</p>
         </div>
-        <div className="btnBox tc mt40">
+        <div className="btnBox">
             <Link to ="/">
                 <button className="btn btn01">메인으로</button>
             </Link>
