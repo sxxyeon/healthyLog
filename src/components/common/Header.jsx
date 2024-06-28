@@ -94,16 +94,6 @@ const Header = () => {
               </li>
             </ul>
           )}
-          {isMobile && (
-            <Link
-              to="/auth/login"
-              className="loginBtn"
-              style={{ display: dropdownVisible ? 'block' : 'none' }}
-              onClick={handleLinkClick}
-            >
-              로그인
-            </Link>
-          )}
         </div>
       </div>
       {/* 드롭다운 메뉴 */}

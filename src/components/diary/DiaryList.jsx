@@ -116,7 +116,12 @@ const DiaryList = ({ data }) => {
           ? filteredResults.length
           : sortedData.length) && (
         <button className="loadMoreButton" onClick={loadMoreItems}>
-          더보기
+          <FeatherIcon
+            icon="chevron-down"
+            size="24"
+            color="#9BA2A9"
+            strokeWidth="2"
+          />
         </button>
       )}
     </div>
