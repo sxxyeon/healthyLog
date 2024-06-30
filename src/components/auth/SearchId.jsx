@@ -9,7 +9,7 @@ const Search_id = memo (() => {
   const navigate = useNavigate();
 
   const handleOnGoBack = () => { // 취소 버튼클릭 이벤트핸들러
-    navigate('/');
+    navigate(-1);
   };
   const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
 
