@@ -11,6 +11,7 @@
   border-radius: 3px;
   text-align: center;
   padding: 4px 7px;
+  height: 40px;
   border: 1px solid $primary;
   background: #fff;
   color: $primary;
@@ -81,14 +82,9 @@ div.boardContents {
 //게시글(BoardDetailson)
 
 .detailBox {
-  //max-width: 940px; BoardDetail.jsx 에서 contWrap으로 감쌈
-  // width: 80%; 클래스 명을 까먹어서  임시
-  //margin: 0 auto;
   position: relative;
-  //min-width: 650px;
 
   .contentTextBox {
-    //margin: 25px;
     .textBox,
     .parts {
       display: flex;

@@ -6,8 +6,8 @@ const SwitchMenu = ({ selectedMenu, handleMenuClick }) => {
     const selectedValue = event.target.value;
     handleMenuClick(selectedValue);
   };
-   //글쓰기 이벤트 핸들러
-   const moveToWrite = () => {
+  //글쓰기 이벤트 핸들러
+  const moveToWrite = () => {
     navigate("/write");
   };
 
@@ -24,7 +24,13 @@ const SwitchMenu = ({ selectedMenu, handleMenuClick }) => {
           <option value="다이어트 정보">다이어트 정보</option>
         </select>
       </form>
-      <button className="btn btn01" onClick={moveToWrite}>글 쓰기</button>
+      <button
+        className="btn btn01"
+        style={{ height: "40px" }}
+        onClick={moveToWrite}
+      >
+        글 쓰기
+      </button>
     </div>
   );
 };

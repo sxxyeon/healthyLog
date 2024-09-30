@@ -91,16 +91,7 @@ const DiaryList = ({ data }) => {
           />
         </div>
         <div className="right_col">
-          <Button type={"positive"} onClick={onClickNew}>
-            <FeatherIcon
-              className="button_plus"
-              icon="plus"
-              size="24"
-              stroke="#fff"
-              strokeWidth="2"
-              onClick={onClickNew}
-            />
-          </Button>
+          <button className="btn btn-primary">글 쓰기</button>
         </div>
       </div>
       <div className="list_wrapper">
