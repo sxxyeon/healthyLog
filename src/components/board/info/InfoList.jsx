@@ -8,7 +8,7 @@ function InfoList() {
         {/* <p>다이어트 정보</p> */}
         <ul className="listBox1">
           {InfoData.map((boardItem) => (
-            <li className="boardContents" key={boardItem.id} id={boardItem.id}>
+            <li key={boardItem.id} id={boardItem.id}>
               <Link
                 to={`/board/info/${boardItem.id}`}
                 state={{ board: boardItem }}

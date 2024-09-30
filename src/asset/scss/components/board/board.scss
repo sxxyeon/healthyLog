@@ -1,8 +1,6 @@
-
-
 //스위치문 선택메뉴
 
-.menu_top{
+.menu_top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,14 +8,13 @@
 }
 
 .switchMenu {
-  border-radius: 30px;
+  border-radius: 3px;
   text-align: center;
-  padding: 7px;
-  border: 2px solid $primary;
+  padding: 4px 7px;
+  border: 1px solid $primary;
   background: #fff;
   color: $primary;
   text-align-last: center;
-  font-size: 18px;
   font-weight: 600;
   box-sizing: border-box;
   cursor: pointer;
@@ -37,20 +34,15 @@ div.boardContents {
   width: 100%;
   box-sizing: border-box;
   margin: 15px 0;
-  border-top: 2px solid #222;
-}
-
-li.boardContents {
-  width: 100%;
-  border-bottom: 1px #ddd solid;
-  padding: 14px 7px;
-  box-sizing: border-box;
-  Link {
-    padding-right: 50%;
+  li {
+    width: 100%;
+    border-bottom: 1px #ddd solid;
+    padding: 14px 7px;
+    box-sizing: border-box;
+    Link {
+      padding-right: 50%;
+    }
   }
-}
-li.boardContents:last-of-type {
-  border: none;
 }
 
 //게시물 작성(CreateBoard & BoardUpdate)
@@ -58,37 +50,26 @@ li.boardContents:last-of-type {
 .createBox {
   width: 100%;
   max-width: 910px;
-  margin: 80px auto 100px;
   text-align: left;
   position: relative;
   box-sizing: border-box;
-  @include mobile {
-    margin: 60px auto 10px;
-  }
 }
 
 .createspan {
   display: block;
-  margin-bottom: 5px;
+  margin: 7px 0 4px;
+  font-size: 0.75rem;
   color: $sub;
-  font-weight: 600;
-  font-size: 14px;
 }
 
 .createByInput,
-.createTitleInput {
-  width: 100%;
-  padding: 7px 10px;
-  border-radius: 7px;
-  border: 1px solid $sub;
-  box-sizing: border-box;
-}
-
+.createTitleInput,
 .creatInputContents {
   width: 100%;
-  border-radius: 7px;
   padding: 7px 10px;
-  border: 1px solid $sub;
+  border-radius: 5px;
+  background: #f5f5f5;
+  border: none;
   box-sizing: border-box;
 }
 
@@ -114,7 +95,6 @@ li.boardContents:last-of-type {
       flex-direction: column;
       align-items: center;
       text-align: left;
-      margin: 60px 0px;
       h1 {
         font-weight: bold;
       }
@@ -140,15 +120,9 @@ li.boardContents:last-of-type {
   }
   h5 {
     width: 100%;
-    font-size: 18px;
     margin-bottom: 15px;
     text-align: left;
     font-weight: 600;
-  }
-  p {
-    font-size: 15px;
-    line-height: 25px;
-    color: #555;
   }
 }
 
@@ -156,20 +130,24 @@ li.boardContents:last-of-type {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15px 0 60px;
-  border-top: 1px solid #555;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
   > div {
     display: flex;
     flex-direction: row;
-    button{
-      padding: 4px;
-      height: 40px;
+    gap: 10px;
+  }
+  .moveBtn {
+    button {
+      svg {
+        padding-top: 3px;
+      }
     }
   }
-  .moveBtn2{
+  .moveBtn2 {
     display: flex;
     flex-direction: row;
-    gap:7px;
+    gap: 7px;
   }
 }
 
@@ -177,12 +155,10 @@ li.boardContents:last-of-type {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 30px;
-  padding: 20px 0;
   h2 {
-    flex:1;
-    line-height: 38px;
+    flex: 1;
     font-weight: 600;
+    font-size: 1.05rem;
   }
 }
 
@@ -191,7 +167,7 @@ li.boardContents:last-of-type {
   box-sizing: border-box;
   padding-bottom: 20px;
   //border-bottom: 2px #ebecf0 solid;
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #ddd;
   color: $sub;
   span {
     display: block;
@@ -202,17 +178,11 @@ li.boardContents:last-of-type {
   }
 }
 
-
 .infoBtn {
   display: flex;
   position: absolute;
   right: 0px;
   bottom: 50px;
-}
-
-hr {
-  margin: 0;
-  border: 1px solid #555;
 }
 
 // progress bar 커스텀

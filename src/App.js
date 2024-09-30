@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
-import React, { useReducer, useRef, useEffect, useState } from 'react'
+
 //import '../src/asset/scss/style.scss'
 import Mains from './pages/Mains'
 import Calculators from './pages/Calculators'

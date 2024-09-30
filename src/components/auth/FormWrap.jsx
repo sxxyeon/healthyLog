@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const FormWrap = ({
   id,
@@ -27,14 +27,14 @@ const FormWrap = ({
 
         {msg && <p className="msg">{msg}</p>}
         {onClick && (
-          <button className="btn btn01" type={btype} onClick={onClick}>
+          <button className="btn btn-primary" type={btype} onClick={onClick}>
             {btnText}
           </button>
         )}
         {children}
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default FormWrap
+export default FormWrap;

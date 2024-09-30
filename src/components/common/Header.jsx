@@ -1,62 +1,63 @@
-import React, { useState, useEffect } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import { Link } from 'react-router-dom'
-import Logo from '../../asset/img/logo_txt.png'
-import { Icon } from '@iconify/react'
-
-//import '../../asset/scss/style.scss'
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import LogoW from "../../asset/img/logo_txt_w.png";
+import LogoP from "../../asset/img/logo_txt.png";
+import { Icon } from "@iconify/react";
+import useIsMain from "../../hooks/useIsMain";
 
 const Header = () => {
-
-  const authUrl = '/auth'
-  const isMobile = useMediaQuery({ maxWidth: 700 })
+  const authUrl = "/auth";
+  const isMain = useIsMain();
 
   //드롭박스
-  const [dropdownVisible, setDropdownVisible] = useState(false)
+  const [dropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = (e) => {
-    e.preventDefault()
-    setDropdownVisible(!dropdownVisible)
-  }
+    e.preventDefault();
+    setDropdownVisible(!dropdownVisible);
+  };
 
   // 스크롤 시 Header상태
-  const [menuVisible, setMenuVisible] = useState(true)
-  const [scrollY, setscrollY] = useState(0)
+  const [menuVisible, setMenuVisible] = useState(true);
+  const [scrollY, setscrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY < scrollY || currentScrollY < 100) {
-        setMenuVisible(true)
+        setMenuVisible(true);
       } else if (currentScrollY > scrollY && currentScrollY > 10) {
         // 스크롤을 내릴 때, 드롭다운 메뉴도 닫아줌
-        setMenuVisible(false)
-        setDropdownVisible(false)
+        setMenuVisible(false);
+        setDropdownVisible(false);
       }
 
-      setscrollY(currentScrollY)
-    }
+      setscrollY(currentScrollY);
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [scrollY])
-
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollY]);
 
   // Link 클릭 시 드롭다운 메뉴 닫기
   const handleLinkClick = () => {
-    setDropdownVisible(false)
-  }
+    setDropdownVisible(false);
+  };
 
   return (
-    <div className={`header ${menuVisible ? 'visible' : 'hidden'}`}>
+    <div className={`header ${menuVisible ? "visible" : "hidden"}`}>
       <div className="upper">
         <div className="inner">
           <h1 className="logo">
             <Link to="/">
-              <img src={Logo} alt="로고" />
+              {isMain ? (
+                <img src={LogoW} alt="로고" />
+              ) : (
+                <img src={LogoP} alt="로고" />
+              )}
             </Link>
           </h1>
           {window.location.href.includes(authUrl) ? (
@@ -65,14 +66,14 @@ const Header = () => {
               <li>
                 <a
                   className="dropdownBtn"
-                  style={{ right: '60px' }}
+                  style={{ right: "30px" }}
                   onClick={toggleDropdown}
                 >
                   <Icon
                     icon="mdi:menu"
                     color="#fd7b54"
-                    width="40"
-                    height="40"
+                    width="30"
+                    height="30"
                   />
                 </a>
               </li>
@@ -80,16 +81,28 @@ const Header = () => {
           ) : (
             <ul className="unb">
               <li>
-                <Link to="/auth/login" onClick={handleLinkClick}>로그인</Link>
+                <Link
+                  to="/auth/login"
+                  onClick={handleLinkClick}
+                  className={`btn ${
+                    isMain ? "btn-outline-w" : "btn-outline-p"
+                  }`}
+                >
+                  로그인
+                </Link>
               </li>
               <li>
                 <a className="dropdownBtn" onClick={toggleDropdown}>
-                  <Icon
-                    icon="mdi:menu"
-                    color="#fd7b54"
-                    width="40"
-                    height="40"
-                  />
+                  {isMain ? (
+                    <Icon icon="mdi:menu" color="#fff" width="30" height="30" />
+                  ) : (
+                    <Icon
+                      icon="mdi:menu"
+                      color="#fd7b54"
+                      width="30"
+                      height="30"
+                    />
+                  )}
                 </a>
               </li>
             </ul>
@@ -97,7 +110,7 @@ const Header = () => {
         </div>
       </div>
       {/* 드롭다운 메뉴 */}
-      <div className={`dropdownMenu ${dropdownVisible ? 'on' : ''}`}>
+      <div className={`dropdownMenu ${dropdownVisible ? "on" : ""}`}>
         <div className="menuWrap">
           <ul>
             <li>
@@ -137,7 +150,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/board"
-                    state={{ selectedMenu: '사용자 게시판' }}
+                    state={{ selectedMenu: "사용자 게시판" }}
                     onClick={handleLinkClick}
                   >
                     사용자 게시판
@@ -146,7 +159,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/board"
-                    state={{ selectedMenu: '다이어트 정보' }}
+                    state={{ selectedMenu: "다이어트 정보" }}
                     onClick={handleLinkClick}
                   >
                     다이어트 정보
@@ -158,7 +171,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

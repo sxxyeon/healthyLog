@@ -2,17 +2,15 @@
 
 /* color */
 $primary: #fd7b54;
-$sub: #9ba2a9;
+$sub: #aaa7b4;
 $lprimary: #ffe4db;
 
 /* Responsive layout, breakpoint */
-
-$breakpoint-mobile: 335px;
 $breakpoint-tablet: 650px;
 $breakpoint-desktop: 1024px;
 
 @mixin mobile {
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
     @content;
   }
 }
@@ -28,7 +26,6 @@ $breakpoint-desktop: 1024px;
     @content;
   }
 }
-
 
 /* 공통 */
 @import "./common.css";
@@ -48,12 +45,11 @@ $breakpoint-desktop: 1024px;
 @import "./components/diary/DiaryList.scss";
 @import "./components/diary/DiaryItem.scss";
 @import "./components/diary/DiaryHeader.scss";
-@import "./components/diary/Button.scss";
 @import "./components/diary/EmotionItem.scss";
 
 /* 보드 컴포넌트*/
 @import "./components/board/board.scss";
 
 /* 로그인/ 아이디비밀번호 찾기 */
-@import './components/auth/Search_id.scss';
-@import './components/auth/Search_pw.scss';
+@import "./components/auth/Search_id.scss";
+@import "./components/auth/Search_pw.scss";

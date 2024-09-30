@@ -1,31 +1,31 @@
-import React, { useState, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { getEmotionImgById } from '../../util'
-import FeatherIcon from 'feather-icons-react'
-import { Icon } from '@iconify/react'
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { getEmotionImgById } from "../../util";
+import FeatherIcon from "feather-icons-react";
+import { Icon } from "@iconify/react";
 
 const DiaryItem = ({ id, emotionId, content, date }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const modalBackground = useRef()
+  const modalBackground = useRef();
   const goEdit = () => {
-    navigate(`/diary/edit/${id}`)
-    document.body.style.overflowY = 'scroll'
-  }
+    navigate(`/diary/edit/${id}`);
+    document.body.style.overflowY = "scroll";
+  };
 
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
-    setModalOpen(true)
-    document.body.style.overflowY = 'hidden'
-  }
+    setModalOpen(true);
+    document.body.style.overflowY = "hidden";
+  };
   const closeModal = () => {
-    setModalOpen(false)
-    document.body.style.overflowY = 'scroll'
-  }
+    setModalOpen(false);
+    document.body.style.overflowY = "scroll";
+  };
   return (
     <div className="DiaryItem">
       <div className="modal-open-btn" onClick={openModal}>
-        <div className={['img_section', `img_section_${emotionId}`].join(' ')}>
+        <div className={["img_section", `img_section_${emotionId}`].join(" ")}>
           {getEmotionImgById(emotionId)}
         </div>
         <div className="info_section">
@@ -37,26 +37,26 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
       </div>
       {modalOpen && (
         <div
-          className={'modal-container'}
+          className={"modal-container"}
           ref={modalBackground}
           onClick={(e) => {
             if (e.target === modalBackground.current) {
-              setModalOpen(false)
+              setModalOpen(false);
             }
           }}
         >
-          <div className={'modal-content'}>
+          <div className={"modal-content"}>
             <Icon
               onClick={closeModal}
-              className={'modal-close-btn'}
+              className={"modal-close-btn"}
               icon="ion:close"
-              width="30px"
-              stroke="#545454"
+              width="24px"
+              color="#aaa7b4 "
             />
-            <div className={'cont'}>
+            <div className={"cont"}>
               <div
-                className={['img_section', `img_section_${emotionId}`].join(
-                  ' '
+                className={["img_section", `img_section_${emotionId}`].join(
+                  " "
                 )}
               >
                 {getEmotionImgById(emotionId)}
@@ -72,7 +72,7 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
               className="button_edit"
               icon="edit"
               size="24"
-              color="#545454"
+              color="#aaa7b4"
               strokeWidth="2"
               onClick={goEdit}
             />
@@ -80,7 +80,7 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(DiaryItem)
+export default React.memo(DiaryItem);

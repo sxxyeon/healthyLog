@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon } from '@iconify/react'
+import React from "react";
+import { Icon } from "@iconify/react";
 
 const BtnNavi = ({
   id,
@@ -15,31 +15,23 @@ const BtnNavi = ({
       <div className="moveBtn">
         {id > data[0].id && (
           <button onClick={moveToprev}>
-            <Icon
-              icon="ion:arrow-back-circle-outline"
-              width="35px"
-              color="#9BA2A9"
-            />
+            <Icon icon="ion:chevron-left" width="18px" color="#ddd" />
           </button>
         )}
         {id < data[data.length - 1].id && (
           <button onClick={moveToNext}>
-            <Icon
-              icon="ion:arrow-forward-circle-outline"
-              width="35px"
-              color="#9BA2A9"
-            />
+            <Icon icon="ion:chevron-right" width="18px" color="#ddd" />
           </button>
         )}
       </div>
       <div className="moveBtn2">
         {moveToUpdate && (
-          <button onClick={moveToUpdate} className="btn btn01 sm-txt">
+          <button onClick={moveToUpdate} className="btn btn04 sm-txt">
             수정하기
           </button>
         )}
         {deleteNote && (
-          <button onClick={() => deleteNote(id)} className="btn btn02 sm-txt">
+          <button onClick={() => deleteNote(id)} className="btn btn04 sm-txt">
             삭제하기
           </button>
         )}
@@ -50,7 +42,7 @@ const BtnNavi = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BtnNavi
+export default BtnNavi;
