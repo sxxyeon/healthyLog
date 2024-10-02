@@ -91,7 +91,9 @@ const DiaryList = ({ data }) => {
           />
         </div>
         <div className="right_col">
-          <button className="btn btn-primary">글 쓰기</button>
+          <button className="btn btn-primary" onClick={onClickNew}>
+            글 쓰기
+          </button>
         </div>
       </div>
       <div className="list_wrapper">
