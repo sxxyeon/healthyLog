@@ -36,9 +36,6 @@ $breakpoint-desktop: 1024px;
 @import "./components/auth/auth.scss";
 @import "./components/search/result.scss";
 @import "./components/calc/calc.scss";
-/* 모달 */
-@import "./components/modal/modal.scss";
-@import "./components/modal/modalList.scss";
 
 // 다이어리 컴포넌트
 @import "./components/diary/Editor.scss";
