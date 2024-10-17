@@ -17,11 +17,9 @@ const Result = () => {
   const [resultCount, setResultCount] = useState(0); // 전체 항목 갯수
   const [paginationStart, setPaginationStart] = useState(1); // 페이지네이션 시작 페이지
 
-  //console.log(searchText)
-  const API_KEY =
-    "9tU2UpezZQbW38%2BHIPNxKiHXh6OKq8l%2BsEDAigS44XRh4G1C4IFJ%2BQ3RkD9ntfGT%2FiAqdS%2FkYL%2BMu2NprtKkHQ%3D%3D";
-  const url = `https://apis.data.go.kr/1471000/FoodNtrIrdntInfoService1/getFoodNtrItdntList1?serviceKey=${API_KEY}&desc_kor=${keyword}&numOfRows=20&pageNo=${currentPage}&type=json`; //api 주소
-  //console.log(currentPage)
+  const API_KEY = process.env.REACT_APP_DATA;
+  const url = `${process.env.REACT_APP_DATA_URL}serviceKey=${API_KEY}&desc_kor=${keyword}&numOfRows=20&pageNo=${currentPage}&type=json`;
+
   useEffect(() => {
     fetchData();
     scrollToTop();
@@ -36,20 +34,17 @@ const Result = () => {
 
   const fetchData = async () => {
     const resp = await axios.get(url);
-    const data = await resp?.data?.body?.items;
-    console.log(resp?.data?.body);
+    const data = await resp.data?.body?.items;
     const uniqueData = Array.from(
       new Map(data?.map((item) => [item.DESC_KOR, item])).values()
-    ); // 공부 필요
+    );
     setResult(uniqueData);
     const totalCount = resp?.data?.body?.totalCount || 1;
     setResultCount(totalCount); // 총 검색결과 수
 
     setTotalPages(Math.ceil(totalCount / 20)); // 페이지 수
   };
-  console.log(result);
   const onChangeChk = (foodInfo) => {
-    console.log(foodInfo.NUTR_CONT1);
     const isChecked = {
       name: foodInfo.DESC_KOR,
       kcal: foodInfo.NUTR_CONT1,
@@ -143,7 +138,7 @@ const Result = () => {
 
   const handleChange = async () => {
     if (!Array.isArray(checkedItem)) {
-      console.error("checkedItem is not an array.");
+      console.error("checkedItem이 배열이 아닙니다");
       return;
     }
 
