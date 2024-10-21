@@ -56,18 +56,13 @@ const BoardDetail = () => {
   };
 
   return (
-    <div>
+    <>
       {/* 선택된 항목이 있을 때만 BoardDetailson 컴포넌트를 렌더링 */}
       {selectedBoard && (
-        <div className="detailBox">
-          <div className="detailTitle">
-            <h2>{selectedBoard.title}</h2>
-          </div>
-
-          <div className="detailCreate">
-            <h3>{selectedBoard.createBy}</h3>
-          </div>
-          <div className="detailcontents">{selectedBoard.contents}</div>
+        <div className="detailBoard">
+          <h3 className="tit">{selectedBoard.title}</h3>
+          <h4 className="createBy">{selectedBoard.createBy}</h4>
+          <div className="content">{selectedBoard.contents}</div>
           <BtnNavi
             id={selectedBoard.id}
             data={notes}
@@ -79,7 +74,7 @@ const BoardDetail = () => {
           />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

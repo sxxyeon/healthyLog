@@ -24,7 +24,7 @@ const BtnNavi = ({
           </button>
         )}
       </div>
-      <div className="moveBtn2">
+      <div className="moveBtn">
         {moveToUpdate && (
           <button onClick={moveToUpdate} className="btn btn04 sm-txt">
             수정하기

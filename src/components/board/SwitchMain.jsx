@@ -10,17 +10,14 @@ const SwitchMain = ({ selectedMenu, setSelectedMenu }) => {
   };
 
   return (
-    <div>
-      <div className="switchcontailner">
-        <SwitchMenu
-          selectedMenu={selectedMenu}
-          handleMenuClick={handleMenuClick}
-        />
-      </div>
-      <div>
-        <SwitchList selectedMenu={selectedMenu} />
-      </div>
-    </div>
+    <>
+      <SwitchMenu
+        selectedMenu={selectedMenu}
+        handleMenuClick={handleMenuClick}
+      />
+
+      <SwitchList selectedMenu={selectedMenu} />
+    </>
   );
 };
 

@@ -22,24 +22,19 @@ function Board() {
   };
 
   return (
-    <div className="boardcontainer">
-      <div className="boardContents">
-        {/* 게시판 리스트 출력 */}
-        <ul>
-          {board?.map((boardItem) => (
-            <li key={boardItem.id} id={boardItem.id}>
-              <Link
-                to={`/board/${boardItem.id}`}
-                state={{ board: boardItem }}
-                className="boardLink"
-              >
-                {boardItem.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <ul className="boardList">
+      {board?.map((boardItem) => (
+        <li key={boardItem.id} id={boardItem.id}>
+          <Link
+            to={`/board/${boardItem.id}`}
+            state={{ board: boardItem }}
+            className="boardLink"
+          >
+            {boardItem.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 

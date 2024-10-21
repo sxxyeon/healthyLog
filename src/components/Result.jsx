@@ -55,7 +55,7 @@ const Result = () => {
     const index = checkedItem.findIndex(
       (item) => item.name === isChecked.name && item.kcal === isChecked.kcal
     );
-    let updatedCheckedItem;
+
     if (index !== -1) {
       // 이미 체크된 항목이 있으면 배열에서 제거
       setCheckedItem((prev) => prev.filter((_, idx) => idx !== index));
@@ -109,8 +109,8 @@ const Result = () => {
             <FeatherIcon
               className="button_return"
               icon="chevron-left"
-              size="15"
-              fill="#333"
+              size="20"
+              stroke="#aaa7b4"
               strokeWidth="1"
             />
           </li>
@@ -126,8 +126,8 @@ const Result = () => {
             <FeatherIcon
               className="button_return"
               icon="chevron-right"
-              size="15"
-              fill="#333"
+              size="20"
+              stroke="#aaa7b4"
               strokeWidth="1"
             />
           </li>
@@ -143,21 +143,8 @@ const Result = () => {
     }
 
     for (const item of checkedItem) {
-      const options = {
-        name: item.name,
-        kcal: item.kcal,
-        isClicked: item.isClicked,
-      };
-
-      const resp = await axios.post(
-        `${process.env.REACT_APP_JSON}/checkedItems`,
-        options
-      );
-      console.log("서버 응답:", resp.data); // 서버 응답 확인
-
-      // 필요에 따라 서버 응답을 처리하거나 다른 로직을 추가할 수 있음
+      await axios.post(`${process.env.REACT_APP_JSON}/checkedItems`, item);
     }
-
     nav("/calculators");
   };
 
@@ -180,9 +167,9 @@ const Result = () => {
       {keyword.length > 0 ? (
         result.length > 0 ? (
           <>
-            <div className="foodBox">
+            <div className="foodList">
               {result.map((item, idx) => (
-                <div key={idx} className="foodList panel">
+                <div key={idx} className="foodBox panel">
                   <input
                     type="checkbox"
                     onChange={() => onChangeChk(item)}
@@ -192,15 +179,15 @@ const Result = () => {
                         checked.kcal === item.NUTR_CONT1
                     )}
                   />
-                  <div className="searchResult">
-                    <h2>{item.DESC_KOR}</h2>
-                    <div className="ingredient">
-                      <div className="ingredient1">
+                  <div className="foodInfo">
+                    <h5>{item.DESC_KOR}</h5>
+                    <div className="props">
+                      <div>
                         <p>칼로리 : {Math.round(item.NUTR_CONT1)} kcal</p>
                         <p>단백질 : {Math.round(item.NUTR_CONT3)} g</p>
                         <p>당류 : {Math.round(item.NUTR_CONT5)} mg</p>
                       </div>
-                      <div className="ingredient2">
+                      <div>
                         <p>탄수화물 : {Math.round(item.NUTR_CONT2)} g</p>
                         <p>지방 : {Math.round(item.NUTR_CONT4)} g</p>
                         <p>나트륨 : {Math.round(item.NUTR_CONT6)} mg</p>
@@ -218,7 +205,7 @@ const Result = () => {
           )
         )
       ) : (
-        ""
+        <p className="noResult">검색어를 입력해 주세요.</p>
       )}
       <button className="prevButton" onClick={handleChange}>
         <Icon icon="ph:calculator" width="40px" />

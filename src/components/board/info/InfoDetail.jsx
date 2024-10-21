@@ -33,41 +33,31 @@ const InfoDetail = () => {
 
   return (
     <>
-      <div className="detailBox">
-        <div className="detailTitle">
-          {/* 게시글 제목 */}
-          <h2>{selectedBoard.title}</h2>
-          {/* 목록 버튼 */}
-        </div>
+      <div className="detailBoard">
+        <h3 className="tit">{selectedBoard.title}</h3>
+        <h4 className="createBy">출처 : {selectedBoard.createBy}</h4>
 
-        <div className="detailCreate">
-          {/* 게시글 출처 */}
-          <h3>출처 : {selectedBoard.createBy}</h3>
-        </div>
-
-        <div className="detailcontents">
-          <div className="contentTextBox">
-            {/* 머릿말 이미지 */}
+        <div className="content">
+          <div className="conts">
+            {/* 머릿말 이미지, 텍스트 */}
             {selectedBoard.headText && (
-              <img
-                className="textImg"
-                src={selectedBoard.imgSrc}
-                alt="infoimg"
-              />
+              <>
+                <img
+                  className="titImg"
+                  src={selectedBoard.imgSrc}
+                  alt="다이어트 관련 정보"
+                />
+                {selectedBoard.headText.split("\n").map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </>
             )}
-
-            {/* 머릿말 텍스트 */}
-
-            {selectedBoard.headText &&
-              selectedBoard.headText
-                .split("\n")
-                .map((line, index) => <p key={index}>{line}</p>)}
 
             {/* 내용 */}
             {selectedBoard.contents.map((content, index) => (
               <div className="textBox" key={index}>
                 <h5>{content.subTitle}</h5>
-                <img className="textImg" src={content.imgSrc} alt="infoimg" />
+                <img src={content.imgSrc} alt="다이어트 관련 정보" />
                 {/* 내용 텍스트 */}
                 {content.text.split("\n").map((part, partIndex) => (
                   <p key={partIndex}>{part}</p>

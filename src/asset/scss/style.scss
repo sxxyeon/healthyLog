@@ -1,37 +1,12 @@
-/* 변수 */
-
-/* color */
-$primary: #fd7b54;
-$sub: #aaa7b4;
-$lprimary: #ffe4db;
-
-/* Responsive layout, breakpoint */
-$breakpoint-tablet: 650px;
-$breakpoint-desktop: 1024px;
-
-@mixin mobile {
-  @media (max-width: #{$breakpoint-tablet - 1px}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$breakpoint-desktop}) {
-    @content;
-  }
-}
+@import "./variables.scss";
+@import "./mixin.scss";
 
 /* 공통 */
 @import "./common.css";
 @import "./layout.scss";
-@import "./main.scss";
+
 /* 컴포넌트 */
+@import "./components/main/main.scss";
 @import "./components/map/map.scss";
 @import "./components/auth/auth.scss";
 @import "./components/search/result.scss";

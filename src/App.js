@@ -1,32 +1,32 @@
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
 //import '../src/asset/scss/style.scss'
-import Mains from './pages/Mains'
-import Calculators from './pages/Calculators'
-import Maps from './pages/Maps'
-import Results from './pages/Results'
-import Logins from './pages/Logins'
-import Join1s from './pages/Join1s'
-import Join2s from './pages/Join2s'
-import Join3s from './pages/Join3s'
-import NotFound from './pages/NotFound'
-import BoardWrites from './pages/BoardWrites'
-import Boards from './pages/Boards'
-import BoardDetails from './pages/BoardDetails'
-import BoardUpdates from './pages/BoardUpdates'
-import Diarys from './pages/Diarys'
-import News from './pages/News'
-import DiaryEdits from './pages/DiaryEdits'
-import SearchIds from './pages/SearchIds'
-import SearchPws from './pages/SearchPws'
-import InfoLists from './pages/InfoLists'
-import InfoDetails from './pages/InfoDetails'
+import Mains from "./pages/Mains";
+import Calculators from "./pages/Calculators";
+import Maps from "./pages/Maps";
+import Results from "./pages/Results";
+import Logins from "./pages/Logins";
+import Join1s from "./pages/Join1s";
+import Join2s from "./pages/Join2s";
+import Join3s from "./pages/Join3s";
+import NotFound from "./pages/NotFound";
+import BoardWrites from "./pages/BoardWrites";
+import Boards from "./pages/Boards";
+import BoardDetails from "./pages/BoardDetails";
+import BoardUpdates from "./pages/BoardUpdates";
+import Diarys from "./pages/Diarys";
+import News from "./pages/News";
+import DiaryEdits from "./pages/DiaryEdits";
+import SearchIds from "./pages/SearchIds";
+import SearchPws from "./pages/SearchPws";
+import InfoLists from "./pages/InfoLists";
+import InfoDetails from "./pages/InfoDetails";
 
-import TopButton from './components/common/TopButton'
-import Header from './components/common/Header'
-import Footer from './components/common/Footer'
+import TopButton from "./components/common/TopButton";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 
-import DiaryProvider from './context/DiaryContext'
+import DiaryProvider from "./context/DiaryContext";
 
 const Layout = () => {
   return (
@@ -37,8 +37,8 @@ const Layout = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 function App() {
   return (
@@ -50,9 +50,9 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route path="/diary/main" element={<Diarys />} />
               <Route path="/diary/new" element={<News />} />
+              <Route path="/diary/edit/:id" element={<DiaryEdits />} />
               <Route path="/auth/Search_id" element={<SearchIds />} />
               <Route path="/auth/Search_pw" element={<SearchPws />} />
-              <Route path="/diary/edit/:id" element={<DiaryEdits />} />
               <Route path="/calculators" element={<Calculators />} />
               <Route path="/map" element={<Maps />} />
               <Route path="/result" element={<Results />} />
@@ -73,7 +73,7 @@ function App() {
         </BrowserRouter>
       </DiaryProvider>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
