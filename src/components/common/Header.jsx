@@ -81,7 +81,12 @@ const Header = () => {
                   마이페이지
                   <ol>
                     <li>
-                      <Link to="/diary/main">식단일기</Link>
+                      <Link
+                        to="/diary/main"
+                        onClick={() => setMobileMenuVisible(false)}
+                      >
+                        식단일기
+                      </Link>
                     </li>
                   </ol>
                 </li>
@@ -89,10 +94,20 @@ const Header = () => {
                   엔터테인먼트
                   <ol>
                     <li>
-                      <Link to="/calculators">칼로리 계산기</Link>
+                      <Link
+                        to="/calculators"
+                        onClick={() => setMobileMenuVisible(false)}
+                      >
+                        칼로리 계산기
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/map">내 주변 건강맛집</Link>
+                      <Link
+                        to="/map"
+                        onClick={() => setMobileMenuVisible(false)}
+                      >
+                        내 주변 건강맛집
+                      </Link>
                     </li>
                   </ol>
                 </li>
@@ -103,6 +118,7 @@ const Header = () => {
                       <Link
                         to="/board"
                         state={{ selectedMenu: "사용자 게시판" }}
+                        onClick={() => setMobileMenuVisible(false)}
                       >
                         사용자 게시판
                       </Link>
@@ -111,6 +127,7 @@ const Header = () => {
                       <Link
                         to="/board"
                         state={{ selectedMenu: "다이어트 정보" }}
+                        onClick={() => setMobileMenuVisible(false)}
                       >
                         다이어트 정보
                       </Link>
@@ -122,7 +139,11 @@ const Header = () => {
 
             <ul className="unb">
               <li>
-                <Link to="/result" state={{ searchText: "" }}>
+                <Link
+                  to="/result"
+                  state={{ searchText: "" }}
+                  onClick={() => setMobileMenuVisible(false)}
+                >
                   {isMain && !mobileMenuVisible ? (
                     <FeatherIcon icon="search" size="24" stroke="#fff" />
                   ) : (
@@ -177,7 +198,12 @@ const Header = () => {
                   <a href="#">마이페이지</a>
                   <ol>
                     <li>
-                      <Link to="/diary/main">식단일기</Link>
+                      <Link
+                        to="/diary/main"
+                        onClick={() => setDropdownVisible(false)}
+                      >
+                        식단일기
+                      </Link>
                     </li>
                   </ol>
                 </li>
@@ -185,10 +211,17 @@ const Header = () => {
                   <a href="#">엔터테인먼트</a>
                   <ol>
                     <li>
-                      <Link to="/calculators">칼로리 계산기</Link>
+                      <Link
+                        to="/calculators"
+                        onClick={() => setDropdownVisible(false)}
+                      >
+                        칼로리 계산기
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/map">내 주변 건강맛집</Link>
+                      <Link to="/map" onClick={() => setDropdownVisible(false)}>
+                        내 주변 건강맛집
+                      </Link>
                     </li>
                   </ol>
                 </li>
@@ -199,6 +232,7 @@ const Header = () => {
                       <Link
                         to="/board"
                         state={{ selectedMenu: "사용자 게시판" }}
+                        onClick={() => setDropdownVisible(false)}
                       >
                         사용자 게시판
                       </Link>
@@ -207,6 +241,7 @@ const Header = () => {
                       <Link
                         to="/board"
                         state={{ selectedMenu: "다이어트 정보" }}
+                        onClick={() => setDropdownVisible(false)}
                       >
                         다이어트 정보
                       </Link>
