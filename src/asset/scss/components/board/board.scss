@@ -95,21 +95,21 @@
     min-height: 30vh;
 
     .conts {
-      .textBox,
-      .parts {
+      .textBox {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
         text-align: left;
+        margin-bottom: 30px;
         h5 {
           margin-bottom: 15px;
           text-align: left;
           font-weight: 600;
         }
-      }
-      img {
-        width: 100%;
-        margin-bottom: 20px;
+        img {
+          width: 100%;
+          margin-bottom: 20px;
+        }
       }
     }
   }
