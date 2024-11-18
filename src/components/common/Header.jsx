@@ -168,6 +168,7 @@ const Header = () => {
                 <button
                   onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
                   className="dropdown_btn"
+                  aria-label="메뉴 오픈"
                 >
                   {mobileMenuVisible ? (
                     <Icon
