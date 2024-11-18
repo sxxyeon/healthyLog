@@ -49,7 +49,6 @@ const DiaryList = ({ data }) => {
           .toLowerCase()
           .includes(searchInput.toLowerCase());
       });
-      console.log(searchInput);
       setFilteredResults(filteredData); // 필터된 데이터 보이기
     } else {
       setFilteredResults(sortedData); // 전체 데이터 보이기
@@ -69,8 +68,6 @@ const DiaryList = ({ data }) => {
 
   return (
     <div className="DiaryList">
-      <div className="input_wrap"></div>
-
       <div className="menu_wrapper">
         <div className="left_col">
           <select value={sortType} onChange={onChangeSortType}>

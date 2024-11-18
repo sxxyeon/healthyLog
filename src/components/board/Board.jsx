@@ -15,7 +15,6 @@ function Board() {
     setBoard(resp.data);
   };
   const [board, setBoard] = useState([]);
-  console.log(board);
   //글쓰기 이벤트 핸들러
   const moveToWrite = () => {
     navigate("/write");

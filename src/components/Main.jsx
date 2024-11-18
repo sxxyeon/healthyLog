@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import FeatherIcon from "feather-icons-react";
 import logo from "../asset/img/logo_txt_w.png";
-import salad from "../asset/img/salad_mobile.png";
+import salad from "../asset/img/salad_mobile.webp";
 
 function Main() {
   const [searchText, setSearchText] = useState("");
@@ -16,7 +16,6 @@ function Main() {
   const onSubmitSrch = (e) => {
     e.preventDefault();
     nav(`/result`, { state: { searchText } });
-    console.log("검색어:", searchText);
   };
 
   return (
@@ -61,7 +60,11 @@ function Main() {
                 value={searchText}
                 onChange={handleInputChange}
               />
-              <button className="mainImgButton" onClick={onSubmitSrch}>
+              <button
+                className="mainImgButton"
+                onClick={onSubmitSrch}
+                aria-label="음식 검색"
+              >
                 <FeatherIcon icon="search" size="30" stroke="#fd7b54" />
               </button>
             </form>

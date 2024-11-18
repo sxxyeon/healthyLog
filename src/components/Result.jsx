@@ -8,7 +8,7 @@ import { scrollToTop } from "./common/TopButton";
 const Result = () => {
   const nav = useNavigate();
   const { state } = useLocation();
-  const { searchText } = state; // 가져온 검색어
+  const { searchText = "" } = state || {}; // 가져온 검색어
   const [keyword, setKeyword] = useState(searchText || ""); // 검색어
   const [result, setResult] = useState([]); // 결과 식품배열
   const [checkedItem, setCheckedItem] = useState([]); // 체크된 식품 배열
@@ -18,7 +18,7 @@ const Result = () => {
   const [paginationStart, setPaginationStart] = useState(1); // 페이지네이션 시작 페이지
 
   const API_KEY = process.env.REACT_APP_DATA;
-  const url = `${process.env.REACT_APP_DATA_URL}serviceKey=${API_KEY}&desc_kor=${keyword}&numOfRows=20&pageNo=${currentPage}&type=json`;
+  const url = `${process.env.REACT_APP_DATA_URL}serviceKey=${API_KEY}&FOOD_NM_KR=${keyword}&numOfRows=20&pageNo=${currentPage}&type=json`;
 
   useEffect(() => {
     fetchData();
@@ -36,7 +36,7 @@ const Result = () => {
     const resp = await axios.get(url);
     const data = await resp.data?.body?.items;
     const uniqueData = Array.from(
-      new Map(data?.map((item) => [item.DESC_KOR, item])).values()
+      new Map(data?.map((item) => [item.FOOD_NM_KR, item])).values()
     );
     setResult(uniqueData);
     const totalCount = resp?.data?.body?.totalCount || 1;
@@ -46,8 +46,8 @@ const Result = () => {
   };
   const onChangeChk = (foodInfo) => {
     const isChecked = {
-      name: foodInfo.DESC_KOR,
-      kcal: foodInfo.NUTR_CONT1,
+      name: foodInfo.FOOD_NM_KR,
+      kcal: foodInfo.AMT_NUM1,
       isClicked: !foodInfo.isClicked,
     };
 
@@ -102,7 +102,6 @@ const Result = () => {
           <li
             onClick={() => {
               setPaginationStart(paginationStart - 10);
-              //console.log(paginationStart)
               setCurrentPage(paginationStart - 1);
             }}
           >
@@ -175,22 +174,22 @@ const Result = () => {
                     onChange={() => onChangeChk(item)}
                     checked={checkedItem.some(
                       (checked) =>
-                        checked.name === item.DESC_KOR &&
-                        checked.kcal === item.NUTR_CONT1
+                        checked.name === item.FOOD_NM_KR &&
+                        checked.kcal === item.AMT_NUM1
                     )}
                   />
                   <div className="foodInfo">
-                    <h5>{item.DESC_KOR}</h5>
+                    <h5>{item.FOOD_NM_KR}</h5>
                     <div className="props">
                       <div>
-                        <p>칼로리 : {Math.round(item.NUTR_CONT1)} kcal</p>
-                        <p>단백질 : {Math.round(item.NUTR_CONT3)} g</p>
-                        <p>당류 : {Math.round(item.NUTR_CONT5)} mg</p>
+                        <p>칼로리 : {Math.round(item.AMT_NUM1)} kcal</p>
+                        <p>단백질 : {Math.round(item.AMT_NUM3)} g</p>
+                        <p>당류 : {Math.round(item.AMT_NUM8)} mg</p>
                       </div>
                       <div>
-                        <p>탄수화물 : {Math.round(item.NUTR_CONT2)} g</p>
-                        <p>지방 : {Math.round(item.NUTR_CONT4)} g</p>
-                        <p>나트륨 : {Math.round(item.NUTR_CONT6)} mg</p>
+                        <p>탄수화물 : {Math.round(item.AMT_NUM7)} g</p>
+                        <p>지방 : {Math.round(item.AMT_NUM4)} g</p>
+                        <p>나트륨 : {Math.round(item.AMT_NUM14)} mg</p>
                       </div>
                     </div>
                   </div>

@@ -63,14 +63,12 @@ const BoardWrite = () => {
       createBy: newNote.createBy,
       contents: newNote.contents,
     };
-    console.log(options);
 
     try {
       const resp = await axios.post(
         `${process.env.REACT_APP_JSON}/board`,
         options
       );
-      console.log("서버 응답:", resp.data);
 
       setNotes((prevNotes) => [...prevNotes, newNote]);
       setStoredNotes((prevNotes) => [...prevNotes, newNote]);

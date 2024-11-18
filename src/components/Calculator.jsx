@@ -20,7 +20,6 @@ const Calculator = React.memo((checkBox) => {
 
   const fetchData = async () => {
     const resp = await axios.get(`${process.env.REACT_APP_JSON}/checkedItems`);
-    console.log(resp);
     setInitialData(resp.data);
   };
 
@@ -50,8 +49,6 @@ const Calculator = React.memo((checkBox) => {
   };
 
   const { gender, age, cm, kg, kcal } = body;
-
-  console.log(initialData);
 
   // 계산 버튼
   const onClick = () => {

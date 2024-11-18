@@ -64,7 +64,12 @@ const Editor = ({ initData, onSubmit }) => {
       <div className="date_wrapper mt30">
         <h5>날짜를 선택해주세요</h5>
         <div className="input_wrapper">
-          <input type="date" value={state.date} onChange={handleChangeDate} />
+          <input
+            type="date"
+            value={state.date}
+            onChange={handleChangeDate}
+            tabIndex="1"
+          />
         </div>
       </div>
       <div className="editor_section mt40">
@@ -86,8 +91,8 @@ const Editor = ({ initData, onSubmit }) => {
             placeholder="오늘은 어떤걸 먹었나요?"
             value={state.content}
             onChange={handleChangeContent}
-            // onChange={onInputHandler}
             maxLength="700"
+            tabIndex="2"
           />
 
           <p>
@@ -98,7 +103,12 @@ const Editor = ({ initData, onSubmit }) => {
       </div>
       <div className="btnBox">
         <Button text={"이전으로"} onClick={handleOnGoBack} />
-        <Button text={"저장하기"} type={"positive"} onClick={handleSubmit} />
+        <Button
+          text={"저장하기"}
+          type={"positive"}
+          onClick={handleSubmit}
+          tabIndex="3"
+        />
       </div>
     </div>
   );

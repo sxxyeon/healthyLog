@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <>
       <div className="subTitle tc">
-        <img src={Logo} alt="" className="login_logo" />
+        <img src={Logo} alt="logo" className="login_logo" />
       </div>
       <div className="loginWrap">
         <div className="inputBox">

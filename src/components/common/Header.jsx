@@ -165,7 +165,7 @@ const Header = () => {
               )}
 
               <li>
-                <a
+                <button
                   onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
                   className="dropdown_btn"
                 >
@@ -186,7 +186,7 @@ const Header = () => {
                       height="24"
                     />
                   )}
-                </a>
+                </button>
               </li>
             </ul>
           </div>
